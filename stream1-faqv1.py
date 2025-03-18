@@ -26,7 +26,7 @@ while not pc.describe_index(INDEX_NAME).status.get('ready', False):
     time.sleep(1)
 index = pc.Index(INDEX_NAME)
 
-ft_model = SentenceTransformer("/home/shahriar/Work/AbanTether/raggpt/pincone_RAG/embedded_fintune/distilroberta-ai-faq1-v1-embeddingfinetuned-model-1")
+ft_model = SentenceTransformer("Shahriardev/distobert-finetuned-embedding-faq1-v1-1")
 print("Fine-tuned model dimension:", ft_model.get_sentence_embedding_dimension())
 
 # def get_embedding(text: str, model: str = "text-embedding-3-large") -> list:
