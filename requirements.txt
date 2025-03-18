@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+python-dotenv
+openai
+anthropic
+transformers
+torch
+PyMuPDF
+numpy
+SQLAlchemy
+pinecone
+sentence-transformers

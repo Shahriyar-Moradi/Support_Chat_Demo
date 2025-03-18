@@ -1,6 +1,6 @@
 import time
 import streamlit as st
-import PyPDF2
+# import PyPDF2
 from pinecone import Pinecone, ServerlessSpec
 from openai import OpenAI
 import os
