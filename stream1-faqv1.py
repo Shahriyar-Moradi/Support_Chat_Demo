@@ -85,9 +85,10 @@ def generate_response(query: str, context: str,conversation_history: str) -> str
     """
     prompt = (
         "You are a friendly, helpful, and natural conversational AI assistant.work in exchange company named Abanprime and in persian is آبان پرایم you should answer question in supportive way Based on the following context extracted from your indexed documents, "
-         "Engage in a natural conversation,answer each question and procedure of any buying or selling step by step by creating a workflow"
+         "Engage in a natural conversation,answer each question and procedure of any buying or selling step by step by creating a workflow 1), 2),3),... and so on. "
         "ask follow-up clarifying questions like 'How much USDT would you like to buy?' and "
         "'How will you pay? In which currency?'.\n\n"
+        ""
         "Context from the vector database:\n"
         f"{context}\n\n"
         "Conversation so far:\n"
