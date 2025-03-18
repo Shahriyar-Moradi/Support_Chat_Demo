@@ -6,6 +6,13 @@ from openai import OpenAI
 import os
 from sentence_transformers import SentenceTransformer
 
+from dotenv import load_dotenv
+import os
+from openai import OpenAI
+import base64
+# Load environment variables
+load_dotenv() 
+
 # INDEX_NAME = "abanprime-chat" 
 
 INDEX_NAME = "aban-rag-ft2-faq-v1-1" 
