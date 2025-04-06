@@ -10,3 +10,4 @@ numpy
 SQLAlchemy
 pinecone
 sentence-transformers
+accelerate

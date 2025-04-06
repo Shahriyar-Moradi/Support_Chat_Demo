@@ -8,7 +8,7 @@ from sentence_transformers import SentenceTransformer
 
 from dotenv import load_dotenv
 import os
-from openai import OpenAI
+
 import base64
 # Load environment variables
 load_dotenv() 
@@ -26,6 +26,7 @@ while not pc.describe_index(INDEX_NAME).status.get('ready', False):
     time.sleep(1)
 index = pc.Index(INDEX_NAME)
 
+# ft_model = SentenceTransformer("Shahriardev/distobert-finetuned-embedding-faq1-v1-1")
 ft_model = SentenceTransformer("Shahriardev/distobert-finetuned-embedding-faq1-v1-1")
 print("Fine-tuned model dimension:", ft_model.get_sentence_embedding_dimension())
 
