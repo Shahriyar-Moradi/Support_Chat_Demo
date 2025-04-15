@@ -213,7 +213,7 @@ def classify_query(query: str) -> QueryType:
     Classify the query using OpenAI function calling.
     """
     system_prompt = """
-    You are an expert at analyzing financial queries in both Persian (Farsi) and English.
+    You are an expert at analyzing financial queries in both Persian (Farsi).
     Your task is to classify user questions about currency exchange, rates, and transactions.
 
     Currency information:
