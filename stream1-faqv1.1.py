@@ -171,7 +171,7 @@ def reformulate_query(query: str) -> str:
     )
     
     response = client.chat.completions.create(
-        model="gpt-4o-mini",  # Use a smaller model for efficiency
+        model="gpt-4o",  # Use a smaller model for efficiency
         messages=[{"role": "user", "content": prompt}],
         temperature=0.2,
         max_tokens=100
@@ -241,7 +241,7 @@ def classify_query(query: str) -> QueryType:
     
     try:
         response = client.chat.completions.create(
-            model="gpt-4o-mini",
+            model="gpt-4o",
             messages=[
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": query}

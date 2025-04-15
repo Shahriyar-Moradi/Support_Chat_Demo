@@ -103,7 +103,7 @@ def extract_entities(memory: ConversationMemory, message: str,
 
     try:
         response = client.chat.completions.create(
-            model="gpt-4o-mini",
+            model="gpt-4o",
             messages=[
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": f"Extract information from this message: '{message}'"}
@@ -186,7 +186,7 @@ def generate_conversation_summary(memory: ConversationMemory, client: Any) -> st
     
     try:
         response = client.chat.completions.create(
-            model="gpt-4o-mini",
+            model="gpt-4o",
             messages=[
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": f"Summarize this conversation:\n\n{conversation}"}
@@ -238,7 +238,7 @@ def identify_missing_information(memory: ConversationMemory, client: Any) -> Lis
     
     try:
         response = client.chat.completions.create(
-            model="gpt-4o-mini",
+            model="gpt-4o",
             messages=[
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": f"Conversation entities:\n{entities_info}\n\nWhat information is still missing?"}
@@ -342,7 +342,7 @@ def generate_follow_up_questions(memory: ConversationMemory, client: Any) -> Lis
         
         try:
             response = client.chat.completions.create(
-                model="gpt-4o-mini",
+                model="gpt-4o",
                 messages=[
                     {"role": "system", "content": system_prompt},
                     {"role": "user", "content": f"Current conversation:\n\n{conversation}"}
