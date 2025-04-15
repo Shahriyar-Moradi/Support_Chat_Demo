@@ -100,8 +100,8 @@ def generate_response(query: str, context: str,conversation_history: str) -> str
 
     chat_response = client.chat.completions.create(
         # model="o1",
-        # model="gpt-4o",
-        model="gpt-4.5-preview",
+        model="gpt-4o",
+        # model="gpt-4.5-preview",
         # Change to "gpt-4" if preferred
         messages=[{"role": "user", "content": prompt}],
         temperature=0.4
