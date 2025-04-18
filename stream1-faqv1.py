@@ -52,7 +52,7 @@ index = pc.Index(INDEX_NAME)
 import torch
 
 # low‑memory, meta‑safe instantiation:
-ft_model = SentenceTransformer.from_pretrained(
+ft_model = SentenceTransformer(
     "Shahriardev/distobert-finetuned-embedding-faq1-v1-1",
     device_map={"": "cpu"},       # pin all sub‑modules to CPU
     low_cpu_mem_usage=True,       # do init_empty_weights + to_empty
