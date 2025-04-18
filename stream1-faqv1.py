@@ -12,7 +12,6 @@ from dotenv import load_dotenv
 import re
 import uuid
 from datetime import datetime
-import torch
 
 # Import the memory pipeline functions
 from memory_pipeline import (
@@ -30,9 +29,7 @@ from memory_pipeline import (
 load_dotenv()
 
 # Configuration
-# INDEX_NAME = "aban-rag-ft2-faq-v1-1"
-INDEX_NAME  = "aban-rag-ft2-faq-v1-1-18april-data-added-1"
-
+INDEX_NAME = "aban-rag-ft2-faq-v1-1"
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 PINECONE_API_KEY = os.getenv("PINECONE_API_KEY")
 
@@ -48,48 +45,8 @@ index = pc.Index(INDEX_NAME)
 
 # Load fine-tuned embedding model
 # ft_model = SentenceTransformer("/Users/shahriar/Desktop/Work/AbanTether/AbanTether/raggpt/pincone_RAG/embedded_fintune/distobert-finetuned-embedding-faq1-v1-1")
-
-
-
-# ft_model = SentenceTransformer("Shahriardev/distobert-finetuned-embedding-faq1-v1-1",device='cpu')
-# print("Fine-tuned model dimension:", ft_model.get_sentence_embedding_dimension())
-
-
-
-from accelerate import init_empty_weights
-from sentence_transformers import SentenceTransformer
-
-# 1) Meta‑init the model without loading weights
-with init_empty_weights():
-    ft_model = SentenceTransformer(
-        "Shahriardev/distobert-finetuned-embedding-faq1-v1-1",
-        trust_remote_code=True
-    )
-
-# 2) Allocate real (empty) storage on CPU
-ft_model = ft_model.to_empty("cpu")
-
-# 3) Load the real weights from Hugging‑Face
-ft_model.load_state_dict(
-    ft_model._first_module().auto_model.state_dict(),  # or torch.load(...) if you've saved locally
-    strict=False
-)
-
-# 4) (Optionally) move to your dtype
-ft_model = ft_model.to(torch.float32)
-
-print("Fine‑tuned model dimension:", ft_model.get_sentence_embedding_dimension())
-
-
-
-
-
-
-
-
-
-
-
+ft_model = SentenceTransformer("Shahriardev/distobert-finetuned-embedding-faq1-v1-1",device='meta')
+print("Fine-tuned model dimension:", ft_model.get_sentence_embedding_dimension())
 
 # Currency mappings and keywords
 CURRENCY_KEYWORDS = {
