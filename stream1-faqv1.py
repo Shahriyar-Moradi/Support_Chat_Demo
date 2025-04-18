@@ -45,8 +45,23 @@ index = pc.Index(INDEX_NAME)
 
 # Load fine-tuned embedding model
 # ft_model = SentenceTransformer("/Users/shahriar/Desktop/Work/AbanTether/AbanTether/raggpt/pincone_RAG/embedded_fintune/distobert-finetuned-embedding-faq1-v1-1")
-ft_model = SentenceTransformer("Shahriardev/distobert-finetuned-embedding-faq1-v1-1",device='meta')
-print("Fine-tuned model dimension:", ft_model.get_sentence_embedding_dimension())
+# ft_model = SentenceTransformer("Shahriardev/distobert-finetuned-embedding-faq1-v1-1",device='meta')
+# print("Fine-tuned model dimension:", ft_model.get_sentence_embedding_dimension())
+
+
+import torch
+
+# low‑memory, meta‑safe instantiation:
+ft_model = SentenceTransformer.from_pretrained(
+    "Shahriardev/distobert-finetuned-embedding-faq1-v1-1",
+    device_map={"": "cpu"},       # pin all sub‑modules to CPU
+    low_cpu_mem_usage=True,       # do init_empty_weights + to_empty
+    torch_dtype=torch.float32,    # or float16 if you prefer
+    trust_remote_code=True        # if the repo defines custom layers
+)
+
+print("Fine‑tuned model dimension:", ft_model.get_sentence_embedding_dimension())
+
 
 # Currency mappings and keywords
 CURRENCY_KEYWORDS = {
