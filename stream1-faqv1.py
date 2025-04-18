@@ -59,14 +59,10 @@ pc = Pinecone(api_key=PINECONE_API_KEY)
 INDEX_NAME = "aban-rag-ft2-faq-v1-1-18april-data-added-1"
 
 # Initialize the index
-@st.cache_resource
-def init_pinecone_index():
-    # Wait until the index is ready
-    while not pc.describe_index(INDEX_NAME).status.get('ready', False):
-        time.sleep(1)
-    return pc.Index(INDEX_NAME)
-
-index = init_pinecone_index()
+# @st.cache_resource
+while not pc.describe_index(INDEX_NAME).status.get('ready', False):
+    time.sleep(1)
+index = pc.Index(INDEX_NAME)
 
 # Initialize the SentenceTransformer with the fine-tuned model
 @st.cache_resource
