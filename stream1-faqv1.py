@@ -47,7 +47,7 @@ index = pc.Index(INDEX_NAME)
 
 # Load fine-tuned embedding model
 # ft_model = SentenceTransformer("/Users/shahriar/Desktop/Work/AbanTether/AbanTether/raggpt/pincone_RAG/embedded_fintune/distobert-finetuned-embedding-faq1-v1-1")
-ft_model = SentenceTransformer("Shahriardev/distobert-finetuned-embedding-faq1-v1-1",device='meta')
+ft_model = SentenceTransformer("Shahriardev/distobert-finetuned-embedding-faq1-v1-1")
 print("Fine-tuned model dimension:", ft_model.get_sentence_embedding_dimension())
 
 # Currency mappings and keywords
