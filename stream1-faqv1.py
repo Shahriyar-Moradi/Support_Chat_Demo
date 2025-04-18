@@ -30,7 +30,7 @@ load_dotenv()
 
 # Configuration
 # INDEX_NAME = "aban-rag-ft2-faq-v1-1"
-INDEX_NAME = "aban-rag-ft2-faq-v1-1-18april-data-added"
+INDEX_NAME  = "aban-rag-ft2-faq-v1-1-18april-data-added-1"
 
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 PINECONE_API_KEY = os.getenv("PINECONE_API_KEY")
