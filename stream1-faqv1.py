@@ -56,7 +56,7 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 pc = Pinecone(api_key=PINECONE_API_KEY)
 
 # Set index name
-INDEX_NAME = "aban-rag-ft2-faq-v1-1-18april-data-added-1"
+INDEX_NAME = "aban-rag-persian-faq-v1-3-21thapril"
 
 # Initialize the index
 # @st.cache_resource
