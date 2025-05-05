@@ -198,7 +198,7 @@ def main():
     if st.sidebar.button("Start New Chat"):
         st.session_state.chat_id = str(uuid.uuid4())
         st.session_state.messages = []
-        st.experimental_rerun()
+        st.rerun()
     
     # Display debug info
     if st.session_state.debug_mode:
