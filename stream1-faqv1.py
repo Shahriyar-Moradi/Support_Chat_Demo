@@ -67,7 +67,7 @@ index = pc.Index(INDEX_NAME)
 # Initialize the SentenceTransformer with the fine-tuned model
 @st.cache_resource
 def load_sentence_transformer():
-    model = SentenceTransformer("Shahriardev/distobert-finetuned-embedding-faq1-v1-1")
+    model =SentenceTransformer('heydariAI/persian-embeddings')
     return model
 
 ft_model = load_sentence_transformer()
